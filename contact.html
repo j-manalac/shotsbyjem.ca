@@ -79,12 +79,12 @@
                     <datalist id="cityList"></datalist>
                 </div>
                 <div class="form-group">
-                    <label class="contact" for="phone">Phone Number<br />(Format: 123-456-789): </label>
-                    <input required id="phone" class = "form-control" name="phone" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" tabindex = "6"/>
+                    <label class="contact" for="phone">Phone Number<br />(Format: 123456789): </label>
+                    <input required id="phone" class = "form-control" name="phone" type="tel" pattern="^\d{3}\d{3}\d{4}$" tabindex = "6"/>
                 </div>
                 <div class="form-group">
-                    <label class="contact" for="postal-code">Postal Code <br />(Format: X1X-1X1): </label>
-                    <input required id="postal-code" class = "form-control" name="postal-code" type="text" pattern="^[A-Za-z]\d[A-Za-z][-]\d[A-Za-z]\d$" tabindex = "7"/>
+                    <label class="contact" for="postal-code">Postal Code <br />(Format: X1X1X1): </label>
+                    <input required id="postal-code" class = "form-control" name="postal-code" type="text" pattern="^[A-Za-z]\d[A-Za-z]\d[A-Za-z]\d$" tabindex = "7"/>
                 </div>
                 <div class="form-check form-check-inline">
                     <!--Checkbox option to be phoned-->
@@ -117,7 +117,7 @@
                 <!--Comments-->
                 <div class = "form-group">
                 <label for="comments">Please enter your comments below: </label>
-                <textarea class = "form-control" name="comments1" id="comments" cols="60" rows="5" placeholder = "Enter your comments here..." tabindex = "8"></textarea>
+                <textarea required class = "form-control" name="comments1" id="comments" cols="60" rows="5" placeholder = "Enter your comments here..." tabindex = "8"></textarea>
                 </div>
                 <!--Hidden input field with name-->
                 <input type="hidden" name="hiddenName" id="hidden-name" value="Jemimah Manalac" />
