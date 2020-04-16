@@ -120,9 +120,13 @@
 			<div class = "col-md-4">
 				<hr class = "light">
 				<h4>Subscribe</h4>
-				<form class = "subscribe-form" action="https://formspree.io/xknvgwey" method="post">
-					<input type="email" name="reply-to" class="text-input contact-input" placeholder="Email address" />
-					<input type="submit" class="btn-primary btn-lg" value="Subscribe"/>
+				<form class = "form" id = "subscribe-form" action="https://formspree.io/xknvgwey" method="post" onsubmit = "validateEmail(this)">
+					<input required type="email" name="reply-to" class="form-control text-input contact-input" placeholder="Email address" />
+					<i class = "fas fa-check-circle circle" id = "subscribe-check-circle"></i>
+					<i class = "fas fa-exclamation-circle circle" id = "subscribe-check-circle"></i>
+					<!--Use to display error message to user if email is not valid/not entered-->
+					<small>Please enter a valid e-mail address.</small>
+					<input type="submit" class="btn-primary btn-lg" name="reply-to" value="Subscribe"/>
 				</form>
 			</div>
 			<div class = "col-12">

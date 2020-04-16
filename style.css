@@ -182,11 +182,6 @@ footer {
   text-decoration: none;
 }
 
-
-.subscribe-form {
-  padding: 1em;
-}
-
 /*input[type='submit'] {
   background: #9696af;
   color: #112d4e;
@@ -210,6 +205,20 @@ input[type = 'submit'] {
   cursor: pointer;
 }
 
+.form-control i {
+
+}
+/*Put form-control icons inside the input boxes, show only when there is invalid input*/
+/*.form-control i {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+} 
+small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}*/
 /*input[type = 'reset'] {
   background: #9696af;
   color: #112d4e;
