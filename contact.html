@@ -17,7 +17,9 @@
     </script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link href="style.css" rel="stylesheet">
-    <script src="contact.js" type = "text/javaScript"></script>
+    <script src="contact.js" type="text/javaScript"></script>
+    
+
 </head>
     <body>
         <!-- Navigation -->
@@ -54,58 +56,63 @@
             class="container-fluid padding form-wrapper col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
             
             <h1 class="body text-center" id="contact-header">Contact Us</h1>
-            <div id = "error-message"></div>
-            <form class = "form" id = "contact-form" action="https://httpbin.org/post" name="contact-us" method="post" onsubmit = "return validation()">
+            <form class = "form" id = "contact-form" action="https://httpbin.org/post" name="contact-us" method="post">
                 <div class = "form-group">
                     <label for="feedback-first-name">First Name:</label>
-                    <input required class="form-control" id="feedback-first-name" name="first-name" autocomplete="name" type="text" autofocus
+                    <input class="form-control" id="feedback-first-name" name="first-name" autocomplete="name" type="text" autofocus
                     tabindex="1">
                     <i class = "fas fa-check-circle"></i>
                     <i class = "fas fa-exclamation-circle"></i>
-                    <small>Enter your first name</small>
+                    <small>Error Message</small>
                 </div>
                 <div class="form-group">
                     <label for="feedback-last-name">Last Name:</label>
-                    <input required class="form-control" id="feedback-last-name" name="last-name"
+                    <input class="form-control" id="feedback-last-name" name="last-name"
                         autocomplete="family-name" type="text" tabindex="2">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
-                    <small>Enter your last name</small>
+                    <small>Error Message</small>
                 </div>
                 <div class="form-group">
                     <label for="feedback-email">Email:</label>
-                    <input required id="feedback-email" class="form-control" name="email" autocomplete="email" type="email" tabindex="3">
+                    <input id="feedback-email" class="form-control" name="email" autocomplete="email" type="text" tabindex="3">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
-                    <small>Enter a valid email</small>
+                    <small>Error Message</small>
                 </div>
                 <div class="form-group">
                     <label for="address">Address:</label>
-                    <input required id="address" class="form-control" name="address" type="text" tabindex="4">
+                    <input id="address" class="form-control" name="address" type="text" tabindex="4">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
-                    <small>Enter your address</small>
+                    <small>Error Message</small>
                 </div>
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label class="contact" for="city">City: </label>
                     <input required id="city" class = "form-control" name="city" type="text" list="cityList" tabindex = "5"/>
                     <datalist id="cityList"></datalist>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small>Choose a city</small>
-                </div>
+                </div> -->
                 <div class="form-group">
-                    <label class="contact" for="phone">Phone Number<br />(Format: 123456789): </label>
-                    <input required id="phone" class = "form-control" name="phone" type="tel" pattern="^\d{3}\d{3}\d{4}$" tabindex = "6"/>
+                    <label class="contact" for="phone">Phone Number<br />(Format: 1234567890): </label>
+                    <input id="phone" class = "form-control" name="phone" type="tel" tabindex = "6"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error Message</small>
                 </div>
                 <div class="form-group">
                     <label class="contact" for="postal-code">Postal Code <br />(Format: X1X1X1): </label>
-                    <input required id="postal-code" class = "form-control" name="postal-code" type="text" pattern="^[A-Za-z]\d[A-Za-z]\d[A-Za-z]\d$" tabindex = "7"/>
+                    <input id="postal-code" class = "form-control" name="postal-code" type="text" tabindex = "7"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error Message</small>
                 </div>
                 <div class="form-check form-check-inline">
                     <!--Checkbox option to be phoned-->
                     <label class="contact">Would you like to be phoned? </label>
-                    <input required class = "form-check-input" type="checkbox" name="checkbox-phone" id="check-phone-yes" value="1" />
+                    <input class = "form-check-input" type="checkbox" name="checkbox-phone" id="check-phone-yes" value="1" />
                     <label class="form-check-label" for="check-phone-yes">Yes</label>
                 </div>
                 <br>
@@ -133,7 +140,7 @@
                 <!--Comments-->
                 <div class = "form-group">
                 <label for="comments">Please enter your comments below: </label>
-                <textarea required class = "form-control" name="comments1" id="comments" cols="60" rows="5" placeholder = "Enter your comments here..." tabindex = "8"></textarea>
+                <textarea class = "form-control" name="comments1" id="comments" cols="60" rows="5" placeholder = "Enter your comments here..." tabindex = "8"></textarea>
                 </div>
                 <!--Hidden input field with name-->
                 <input type="hidden" name="hiddenName" id="hidden-name" value="Jemimah Manalac" />
@@ -194,6 +201,7 @@
         </div>
     </div>
 </footer>
+<script src="contactValidation.js" type="text/javaScript"></script>
 </body>
 
 </html>

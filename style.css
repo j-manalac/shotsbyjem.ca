@@ -204,9 +204,46 @@ input[type = 'submit'] {
   border-radius: 25px;
   cursor: pointer;
 }
+.form-group .fa-check-circle,
+.fa-exclamation-circle {
+  visibility: hidden;
+}
+.form-group small {
+  position: relative;
+  visibility: hidden;
+}
 
-.form-control i {
+.form-group.success input {
+  border-color: #2ecc71;
+}
 
+.form-group.error input {
+  border-color: #e74c3c;
+}
+
+.form-group.success .fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+.form-group.success .fa-exclamation-circle {
+  visibility: hidden;
+}
+
+.form-group.error .fa-check-circle {
+  visibility: hidden;
+}
+.form-group.error .fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.form-group.error small {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.form-group.success small {
+  visibility: hidden;
 }
 /*Put form-control icons inside the input boxes, show only when there is invalid input*/
 /*.form-control i {

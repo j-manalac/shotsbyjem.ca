@@ -1,3 +1,4 @@
+
 /*function validation() {
   var fName = document.querySelector('#feedback-first-name').value;
   var lName = document.querySelector('#feedback-last-name').value;
@@ -84,7 +85,7 @@ function citiesDatalist() {
   cities.forEach(function(city) {
     var option = document.createElement('option');
     option.value = city;
-    list.appendChild(option);
+//    list.appendChild(option);
   });
 }
 
@@ -98,6 +99,7 @@ function enterOrder() {
     document.querySelector('#if-problem').style.display = 'none';
   }
 }
+
 window.onload = function() {
   this.citiesDatalist();
-};
+}; 
