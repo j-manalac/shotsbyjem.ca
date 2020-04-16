@@ -17,7 +17,7 @@
     </script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link href="style.css" rel="stylesheet">
-    <script src="contact.js"></script>
+    <script src="contact.js" type = "text/javaScript"></script>
 </head>
     <body>
         <!-- Navigation -->
@@ -55,28 +55,44 @@
             
             <h1 class="body text-center" id="contact-header">Contact Us</h1>
             <div id = "error-message"></div>
-            <form action="https://httpbin.org/post" name="contact-us" method="post" onsubmit = "return validation()">
+            <form class = "form" id = "contact-form" action="https://httpbin.org/post" name="contact-us" method="post" onsubmit = "return validation()">
                 <div class = "form-group">
                     <label for="feedback-first-name">First Name:</label>
                     <input required class="form-control" id="feedback-first-name" name="first-name" autocomplete="name" type="text" autofocus
                     tabindex="1">
+                    <i class = "fas fa-check-circle"></i>
+                    <i class = "fas fa-exclamation-circle"></i>
+                    <small>Enter your first name</small>
                 </div>
                 <div class="form-group">
                     <label for="feedback-last-name">Last Name:</label>
-                    <input required class="form-control" id="feedback-last-name" name="last-name" autocomplete="family-name" type="text" tabindex="2">
+                    <input required class="form-control" id="feedback-last-name" name="last-name"
+                        autocomplete="family-name" type="text" tabindex="2">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Enter your last name</small>
                 </div>
                 <div class="form-group">
                     <label for="feedback-email">Email:</label>
                     <input required id="feedback-email" class="form-control" name="email" autocomplete="email" type="email" tabindex="3">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Enter a valid email</small>
                 </div>
                 <div class="form-group">
                     <label for="address">Address:</label>
                     <input required id="address" class="form-control" name="address" type="text" tabindex="4">
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Enter your address</small>
                 </div>
                 <div class="form-group">
                     <label class="contact" for="city">City: </label>
                     <input required id="city" class = "form-control" name="city" type="text" list="cityList" tabindex = "5"/>
                     <datalist id="cityList"></datalist>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Choose a city</small>
                 </div>
                 <div class="form-group">
                     <label class="contact" for="phone">Phone Number<br />(Format: 123456789): </label>
