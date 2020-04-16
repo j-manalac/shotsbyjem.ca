@@ -7,6 +7,7 @@ const address = document.querySelector('#address');
 const city = document.querySelector('#city');
 const phone = document.querySelector('#phone');
 const postal = document.querySelector('#postal-code');
+const comments = document.querySelector('#comments');
 
 
 form.addEventListener('submit', e => {
@@ -24,10 +25,9 @@ function checkInputs() {
 
     const phoneValue = phone.value.trim();
     const postalValue = postal.value.trim();
-    /*const addressValue = address.value.trim();
-    const cityValue = city.value.trim();
-    const phoneValue = phone.value.trim();
-    const postalValue = postal.value.trim();*/
+    const commentsValue = comments.value;
+
+    /*const cityValue = city.value.trim(); */
 
     if (fNameValue === '') {
         //show error
@@ -82,6 +82,12 @@ function checkInputs() {
     }
     else {
         setSuccess(postal);
+    }
+    if (commentsValue === '') {
+        displayError(comments, 'Please enter your comments');
+    }
+    else {
+        setSuccess(comments);
     }
 }
 //Add error to class name to turn on 'error' state
