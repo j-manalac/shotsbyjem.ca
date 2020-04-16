@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shots by Jem Photography</title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <script src="contact.js"></script>
+</head>
+    <body>
+        <!-- Navigation -->
+        <!--Nav bar created using DOM-->
+        <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" id="navbar-main">
+            <div class="container-fluid header-bg">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item dropdown" id="dropdownMenu">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Filter by Category
+                            </a>
+                            <!--Dropdown menu is dynamically added using JS-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        </div>
+        <div
+            class="container-fluid padding form-wrapper col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
+            
+            <h1 class="body text-center" id="contact-header">Contact Us</h1>
+            <div id = "error-message"></div>
+            <form action="https://httpbin.org/post" name="contact-us" method="post" onsubmit = "return validation()">
+                <div class = "form-group">
+                    <label for="feedback-first-name">First Name:</label>
+                    <input required class="form-control" id="feedback-first-name" name="first-name" autocomplete="name" type="text" autofocus
+                    tabindex="1">
+                </div>
+                <div class="form-group">
+                    <label for="feedback-last-name">Last Name:</label>
+                    <input required class="form-control" id="feedback-last-name" name="last-name" autocomplete="family-name" type="text" tabindex="2">
+                </div>
+                <div class="form-group">
+                    <label for="feedback-email">Email:</label>
+                    <input required id="feedback-email" class="form-control" name="email" autocomplete="email" type="email" tabindex="3">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input required id="address" class="form-control" name="address" type="text" tabindex="4">
+                </div>
+                <div class="form-group">
+                    <label class="contact" for="city">City: </label>
+                    <input required id="city" class = "form-control" name="city" type="text" list="cityList" tabindex = "5"/>
+                    <datalist id="cityList"></datalist>
+                </div>
+                <div class="form-group">
+                    <label class="contact" for="phone">Phone Number<br />(Format: 123-456-789): </label>
+                    <input required id="phone" class = "form-control" name="phone" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" tabindex = "6"/>
+                </div>
+                <div class="form-group">
+                    <label class="contact" for="postal-code">Postal Code <br />(Format: X1X-1X1): </label>
+                    <input required id="postal-code" class = "form-control" name="postal-code" type="text" pattern="^[A-Za-z]\d[A-Za-z][-]\d[A-Za-z]\d$" tabindex = "7"/>
+                </div>
+                <div class="form-check form-check-inline">
+                    <!--Checkbox option to be phoned-->
+                    <label class="contact">Would you like to be phoned? </label>
+                    <input required class = "form-check-input" type="checkbox" name="checkbox-phone" id="check-phone-yes" value="1" />
+                    <label class="form-check-label" for="check-phone-yes">Yes</label>
+                </div>
+                <br>
+                <!--Radio Options-->
+                <div class="form-check">
+                    <label class="contact">Why would you like to contact us?</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class = "form-check-input" type="radio" name="question" id="radio-option1" value="Question" checked onclick="enterOrder()" />
+                        <label class="form-check-label" for="radio-option1">Question</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class = "form-check-input" type="radio" name="question" id="radio-option2" value="Comment" onclick="enterOrder()" />
+                        <label class="form-check-label" for="radio-option2">Comment</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class = "form-check-input" type="radio" name="question" id="radio-option3" value="Order Problem" onclick="enterOrder()" />
+                        <label class="form-check-label" for="radio-option3">Order Problem</label>
+                    </div>
+                    <div class="form-group form-check-inline" id="if-problem" style="display:none">
+                        <label class = "form-check-label">Please enter the order number:</label>
+                        <input class = "form-check-input" type="text" id="order-number" name="order-number" />
+                    </div>
+                </div>
+                <br>
+                <!--Comments-->
+                <div class = "form-group">
+                <label for="comments">Please enter your comments below: </label>
+                <textarea class = "form-control" name="comments1" id="comments" cols="60" rows="5" placeholder = "Enter your comments here..." tabindex = "8"></textarea>
+                </div>
+                <!--Hidden input field with name-->
+                <input type="hidden" name="hiddenName" id="hidden-name" value="Jemimah Manalac" />
+                <!--Submit-->
+                <div class="d-flex flex-row-reverse mt-2">
+                    <input class="btn-primary btn-lg btn-submit" type="submit" name="submit" value="Submit" tabindex="9">
+                    <input class="btn-primary mr-3 btn-lg btn-reset" type="reset" name="reset" value="Reset" tabindex="10">
+                </div>
+            </form>
+        </div>
+    <!--Footer-->
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="contact.js"></script> -->
+<footer>
+    <div class="container-fluid padding">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <img src="images/logo.png" alt="logo">
+                <div class="col-12 social padding">
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/explore"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <hr class="light">
+                <h4>Quick Links</h5>
+                    <hr class="light">
+                    <ul class="footer-links">
+                        <li>
+                            <a href="index.html" class="home-link">Home</a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="contact-link">Contact Us</a>
+                        </li>
+                    </ul>
+            </div>
+            <div class="col-md-4">
+                <hr class="light">
+                <h4>Subscribe</h4>
+                <form class="subscribe-form" action="https://formspree.io/xknvgwey" method="post">
+                    <input type="email" name="reply-to" class="text-input contact-input" placeholder="Email address" />
+                    <input type="submit" class="btn-primary btn-lg" value="Subscribe" />
+                </form>
+            </div>
+            <div class="col-12">
+                <hr class="light">
+                <h5>&copy; shotsbyjem.ca | Designed by Jemimah Manalac | 2020</h5>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
