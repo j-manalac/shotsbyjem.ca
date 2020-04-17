@@ -136,6 +136,9 @@ function insertDropdown() {
 }
 //Create side menu div 
 function filterSelection(category) {
+    //remove carousel
+    document.querySelector('.carousel').style.display = "none";
+    //change the title to indicate the filtered category
     document.querySelector('.display-4').innerHTML = `Showing: ${category}`;
     var x = document.querySelectorAll('.product');
     if (category === 'All Products') {
