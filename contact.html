@@ -53,7 +53,8 @@
             class="container-fluid padding form-wrapper col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
             
             <h1 class="body text-center" id="contact-header">Contact Us</h1>
-            <form class = "form" id = "contact-form" action="https://httpbin.org/post" name="contact-us" method="post">
+            <form class="form" id="contact-form" action="https://httpbin.org/post" name="contact-us" method="post"
+                onsubmit=" return validate()">
                 <div class = "form-group">
                     <label for="feedback-first-name">First Name:</label>
                     <input class="form-control" id="feedback-first-name" name="first-name" autocomplete="name" type="text" autofocus

@@ -28,7 +28,6 @@ function citiesDatalist() {
     list.appendChild(option);
   });
 }
-
 //dynamically reveal input box when "Order Problem" is checked
 //called via onclick
 // eslint-disable-next-line no-unused-vars
@@ -43,6 +42,14 @@ function enterOrder() {
 window.onload = function () {
   this.citiesDatalist();
 };
+function validate() {
+  if (!checkInputs()) {
+    return false;
+  }
+  else {
+    return true;
+  }
+}
 //Target all the elements to check their values
 const form = document.getElementById('contact-form');
 const fName = document.querySelector('#feedback-first-name');
@@ -53,11 +60,11 @@ const city = document.querySelector('#city');
 const phone = document.querySelector('#phone');
 const postal = document.querySelector('#postal-code');
 const comments = document.querySelector('#comments');
-form.addEventListener('submit', e => {
+/*form.addEventListener('submit', e => {
   //don't submit form, check inputs first
   e.preventDefault();
   checkInputs();
-});
+});*/
 
 function checkInputs() {
   //trim to account for any whitespace
@@ -69,12 +76,14 @@ function checkInputs() {
   const phoneValue = phone.value.trim();
   const postalValue = postal.value.trim();
   const commentsValue = comments.value;
+  var success = true;
   /*const cityValue = city.value.trim(); */
 
   if (fNameValue === '') {
     //show error
     //add error class
     displayError(fName, 'First name cannot be blank'); //target input to set error
+    success = false;
   }
   else {
     //add success class
@@ -84,6 +93,7 @@ function checkInputs() {
     //show error
     //add error class
     displayError(lName, 'Last name cannot be blank'); //target input to set error
+    success = false;
   }
   else {
     //add success class
@@ -93,51 +103,60 @@ function checkInputs() {
     //show error
     //add error class
     displayError(email, 'Email cannot be blank'); //target input to set error
+    success = false;
   }
   else if (!validEmail(emailValue)) {
     //add success class
     displayError(email, 'Enter a valid email');
+    success = false;
   }
   else {
     setSuccess(email);
   }
   if (addressValue === '') {
     displayError(address, 'Address cannot be blank');
+    success = false;
   }
   else {
     setSuccess(address);
   }
   if (cityValue === '') {
     displayError(city, 'City cannot be blank');
+    success = false;
   }
   else {
     setSuccess(city);
   }
   if (phoneValue === '') {
     displayError(phone, 'Phone number cannot be blank');
+    success = false;
   }
   else if (!validPhone(phoneValue)) {
     displayError(phone, 'Enter a valid phone number');
+    success = false;
   }
   else {
     setSuccess(phone);
   }
   if (postalValue === '') {
     displayError(postal, 'Postal code cannot be blank');
+    success = false;
   }
   else if (!validPostal(postalValue)) {
     displayError(postal, 'Enter a valid postal code');
+    success = false;
   }
   else {
     setSuccess(postal);
   }
   if (commentsValue === '') {
     displayError(comments, 'Please enter your comments');
+    success = false;
   }
   else {
     setSuccess(comments);
   }
-
+  return success;
 }
 //Add error to class name to turn on 'error' state
 //in error state, input box is red, exclamation point is present, and an error message is displayed
