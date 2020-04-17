@@ -9,16 +9,10 @@ html, body {
 .navbar {
   padding: .8rem;
 }
-/*
-.container-fluid {
-  background-color: rgb(204, 225, 252);
-} */
 
 .header-bg {
 background: rgb(235, 245, 255);
 background: linear-gradient(133deg, rgba(235, 245, 255, 1) 10%, rgba(230, 242, 255, 1) 53%, rgba(94, 149, 190, 1) 99%);
-/*background-color: #ffffff;
-  background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);*/
 }
 .navbar-nav li {
   padding-right: 1em;
@@ -28,29 +22,6 @@ background: linear-gradient(133deg, rgba(235, 245, 255, 1) 10%, rgba(230, 242, 2
 .show-filter {
   display: none !important;
 }
-
-/*.carousel {
-
-  height: 360px;
-
-} */
-
-/*.carousel-inner &gt; 
-.item &gt;*/
-
-/*.carousel-item {
-
-  height: 360px;
-
-  object-fit: contain;
-
-} */
-/*
-.carousel-inner>.item>img,
-.carousel-inner>.item>a>img {
-  width: 100%;
-}
-*/
 
 .nav-link {
   font-family: 'Bebas Neue';
@@ -102,28 +73,6 @@ button {
 .btn-primary:hover {
   background: #3f72af;
 }
-
-
-/*
-.btn-secondary {
-  background: #9696af;
-  color: #112d4e;
-  cursor: pointer;
-  font-size: 15px;
-  border: 1px solid #563d73;
-}
-
-.btn-secondary:hover {
-  background: #3f72af;
-}  */
-/*
-.row img {
-  object-fit: cover;
-} */
-/*
-.card {
-  object-fit: cover;
-} */
 
 .card img {
     width: 100% !important;
@@ -182,16 +131,6 @@ footer {
   text-decoration: none;
 }
 
-/*input[type='submit'] {
-  background: #9696af;
-  color: #112d4e;
-  width: 100px;
-  height: 30px;
-  cursor: pointer;
-  font-size: 15px;
-  font-family: 'Bebas Neue', cursive;
-}*/
-
 input[type = 'submit'] {
   border: 0;
   margin-top: 15px;
@@ -245,28 +184,6 @@ input[type = 'submit'] {
 .form-group.success small {
   visibility: hidden;
 }
-/*Put form-control icons inside the input boxes, show only when there is invalid input*/
-/*.form-control i {
-  position: absolute;
-  top: 40px;
-  right: 10px;
-} 
-small {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}*/
-/*input[type = 'reset'] {
-  background: #9696af;
-  color: #112d4e;
-  width: 100px;
-  height: 30px;
-  /*Turn cursor to pointer when hovering over button
-  cursor: pointer;
-  font-size: 15px;
-  font-family: 'Bebas Neue',
-  cursive;
-}*/
 input[type='reset'] {
   border: 0;
   margin-top: 15px;
