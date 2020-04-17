@@ -143,6 +143,14 @@ input[type = 'submit'] {
   border-radius: 25px;
   cursor: pointer;
 }
+/*The following is for form validation
+If invalid input is entered, the input goes into an error state
+If valid input is entered, the input goes into a success state
+CSS is used to indicate the current state of the input
+*/
+.form-wrapper {
+  background-color: rgb(230, 241, 255);
+}
 .form-group .fa-check-circle,
 .fa-exclamation-circle {
   visibility: hidden;
@@ -220,17 +228,7 @@ form {
 .form-check {
   padding-left: 0em;
 }
-
-#error-message {
-  margin-bottom: 20px;
-  padding: 0px;
-  background: #fe8b8e;
-  text-align: center;
-  /*Add the smooth transition effect*/
-  transition: all 0.5s ease;
-
-}
-
+/*Styling for Products*/
 #product-container {
   background-color: #b8c6db;
   background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
