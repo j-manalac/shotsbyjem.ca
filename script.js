@@ -86,7 +86,6 @@ const photos = [
     }
 ];
 
-
 //Array of side menu items
 //When click these side menu items, filter the images to show
 //only those where sideItems.name == photos.category
@@ -120,24 +119,20 @@ function insertDropdown() {
         const options = document.createTextNode(category.name);
         filterOptions.appendChild(options);
         //create anchor to index.html inside each button so page reloads when filtered
-        /*const anchor = document.createElement('a');
-        anchor.href = 'index.html';
-        filterOptions.appendChild(anchor); */
         //add each category button to the dropdown menu
         dropdown.appendChild(filterOptions);
         //if a filter option is clicked, filter cards accordingly
-        filterOptions.addEventListener('click', function() {
+        filterOptions.addEventListener('click', function () {
             filterSelection(category.name);
-        }); 
+        });
     });
     //add dropdown menu to li of dropdown
     navbar.appendChild(dropdown);
-    
 }
-//Create side menu div 
+//Create side menu div
 function filterSelection(category) {
     //remove carousel
-    document.querySelector('.carousel').style.display = "none";
+    document.querySelector('.carousel').style.display = 'none';
     //change the title to indicate the filtered category
     document.querySelector('.display-4').innerHTML = `Showing: ${category}`;
     var x = document.querySelectorAll('.product');
@@ -181,7 +176,7 @@ function removeClass(element, name) {
 let cardContainer;
 
 //create cards for each product
-let createCard = (photo) => {
+let createCard = photo => {
     const productsContainer = document.querySelector('.row');
     const photoUrls = photos.map(p => p.image);
     photoUrls.forEach(url => {
@@ -191,59 +186,55 @@ let createCard = (photo) => {
         pload.as = 'image';
         document.head.appendChild(pload);
     });
-    /*
-    while (productsContainer.firstChild) {
-        productsContainer.removeChild(productsContainer.lastChild);
-    } */
-        //create a container for the image
-        const col = document.createElement('div');
-        col.className = 'col-md-4';
-        col.classList.add('product');
-        col.classList.add(photo.category);
-        col.classList.add('d-flex');
-        //create card
-        const card = document.createElement('div'); 
-        card.classList.add('card');
-        //create the image element
-        const img = document.createElement('img');
-        //set the image source to be the product image
-        img.src = photo.image;
-        //add alt attribute for each image
-        img.alt = photo.name;
-        //insert the image into the image container
-        card.appendChild(img);
+    //create a container for the image
+    const col = document.createElement('div');
+    col.className = 'col-md-4';
+    col.classList.add('product');
+    col.classList.add(photo.category);
+    col.classList.add('d-flex');
+    //create card
+    const card = document.createElement('div');
+    card.classList.add('card');
+    //create the image element
+    const img = document.createElement('img');
+    //set the image source to be the product image
+    img.src = photo.image;
+    //add alt attribute for each image
+    img.alt = photo.name;
+    //insert the image into the image container
+    card.appendChild(img);
 
-        const cardBody = document.createElement('div');
-        cardBody.className = 'card-body';
-        
-        //add the name for the product
-        const cardTitle = document.createElement('h4');
-        cardTitle.innerText = photo.name;
-        cardTitle.classNAme = 'card-title';
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
 
-        //add the category, price and description for the product
-        const cardCategory = document.createElement('div');
-        cardCategory.innerText = photo.category;
-        cardCategory.className = 'card-category';
-        
-        //add the price for the product
-        const cardPrice = document.createElement('div');
-        cardPrice.innerText = `$${photo.price}`;
+    //add the name for the product
+    const cardTitle = document.createElement('h4');
+    cardTitle.innerText = photo.name;
+    cardTitle.classNAme = 'card-title';
 
-        //add the description for the product
-        const desc = document.createElement('div');
-        desc.innerText = photo.description;
-        desc.className = 'card-description'
+    //add the category, price and description for the product
+    const cardCategory = document.createElement('div');
+    cardCategory.innerText = photo.category;
+    cardCategory.className = 'card-category';
 
-        //add elements to card for the product
-        cardBody.appendChild(cardTitle);
-        cardBody.appendChild(cardCategory);
-        cardBody.appendChild(desc);
-        cardBody.appendChild(cardPrice);
-        card.appendChild(cardBody);
-        col.appendChild(card);
-        productsContainer.appendChild(col);
-}
+    //add the price for the product
+    const cardPrice = document.createElement('div');
+    cardPrice.innerText = `$${photo.price}`;
+
+    //add the description for the product
+    const desc = document.createElement('div');
+    desc.innerText = photo.description;
+    desc.className = 'card-description';
+
+    //add elements to card for the product
+    cardBody.appendChild(cardTitle);
+    cardBody.appendChild(cardCategory);
+    cardBody.appendChild(desc);
+    cardBody.appendChild(cardPrice);
+    card.appendChild(cardBody);
+    col.appendChild(card);
+    productsContainer.appendChild(col);
+};
 let initListOfPhotos = () => {
     if (cardContainer) {
         document.getElementById('card-container').replaceWith(cardContainer);
@@ -251,16 +242,13 @@ let initListOfPhotos = () => {
     }
 
     cardContainer = document.getElementById('card-container');
-    photos.forEach((photo) => {
+    photos.forEach(photo => {
         createCard(photo);
     });
 };
-
 
 //when page is loaded, call the functions above
 document.addEventListener('DOMContentLoaded', () => {
     initListOfPhotos();
     insertDropdown();
-    //when page is loaded, the page defaults to showing all products
-    //filterSelection('All Products');
 });
